@@ -1,4 +1,19 @@
 {
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "Learning React",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "IDK",
+    "anything",
+    "upto_you",
+    "react_for_sure"
+  ],
+  "author": "Vathsan",
+  "license": "ISC",
   "devDependencies": {
     "parcel": "^2.16.4"
   }
