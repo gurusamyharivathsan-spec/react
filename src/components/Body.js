@@ -1,9 +1,10 @@
 import ResCards from "./ResCards";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { useOutletContext } from "react-router";
 
-const Body = (props) => {
-    const {resList1, setResList1, filteredResList, setfilteredResList} = props;
+const Body = () => {
+    const {resList1, setResList1, filteredResList, setfilteredResList} = useOutletContext();;
     return resList1.length === 0 ? <Shimmer/> : (
         <div className="body">
             <button className="filter-btn" onClick={() => {

@@ -7,6 +7,12 @@
     "build": "parcel build index.html",
     "test": "jest"
   },
+  "type": "module",
+  "targets": {
+    "default": {
+      "context": "browser"
+    }
+  },
   "keywords": [
     "IDK",
     "anything",
@@ -19,8 +25,8 @@
     "parcel": "^2.16.4"
   },
   "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^7.13.0"
   }
 }

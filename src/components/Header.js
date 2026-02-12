@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {LOGO} from "../utils/constants";
 import { resList1 } from "./Body";
+import { Link } from "react-router";
 const Header = (props) => {
     const {resList1, setResList1} = props;
     const {filteredResList, setfilteredResList} = props
@@ -20,10 +21,9 @@ const Header = (props) => {
                     const filteredList = resList1.filter((res) => res.info.name.toLowerCase().includes(searchVal.toLowerCase()));
                     setfilteredResList(filteredList);
                 }}>Search</button>
-                <li>Home</li>
-                <li>Menu</li>
-                <li>About Us</li>
-                <li>Cart</li>
+                <li><Link to ="/">Home</Link></li>
+                <li><Link to ="/about">About Us</Link></li>
+                <li><Link to ="/contact">Contact Us</Link></li>
                 <button className="loginBtn" onClick={()=> {
                     btnName === "Login" ? setbtnName("Logout") : setbtnName("Login"); 
                 }}>{btnName}</button>
