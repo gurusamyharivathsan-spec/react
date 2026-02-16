@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import RestaurantMenu from "./components/RestaurantMenu";  
 import ReactDOM from "react-dom/client";
@@ -46,7 +45,7 @@ const appRouter = createBrowserRouter([
                 element : <Contact/>
             },
             {
-                path : "/restaurant/:id",
+                path : "/restaurant/:resId",
                 element : <RestaurantMenu/>
             }
         ]
