@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
     
     return (
         <div className="w-full flex justify-center items-center bg-amber-200 h-screen">
-            <div className="menu m-5 p-5 rounded-lg bg-amber-100 w-[250px]">
+            <div className="menu m-5 p-5 rounded-lg bg-amber-100 w-62.5">
             <img src={CDN_URL + cloudinaryImageId} alt = "res-logo" className="res-logo w-40 h-40 mx-5 object-cover rounded-lg"/>
             <h1 className="ml-4 font-bold py-4">Hotel Name: {name}</h1>
             <h3 className="ml-4 font-medium">Cuisines: {cuisines.join(", ")}</h3>
