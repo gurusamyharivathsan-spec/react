@@ -14,4 +14,14 @@ const ResCards = (props) => {
     </div>
     )
 }
+export const VegResCards = (ResCards) => {
+    return(props) => {
+        return (
+            <div>
+                <label className="absolute bg-black text-white rounded-lg m-2 p-2">Veg only</label>
+                <ResCards {...props}/>
+            </div>
+        );
+    };
+};
 export default ResCards;

@@ -1,4 +1,4 @@
-import ResCards from "./ResCards";
+import ResCards, {VegResCards} from "./ResCards";
 import Shimmer from "./Shimmer";
 import { useOutletContext } from "react-router";
 import { Link } from "react-router"
@@ -7,6 +7,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
     const {resList1, setResList1, filteredResList, setfilteredResList} = useOutletContext();
     const onlineStatus = useOnlineStatus();
+    const VegCards = VegResCards(ResCards);
     if (onlineStatus === false) return <h1>Offline, Please check your internet connection!!</h1>
     return resList1.length === 0 ? <Shimmer/> : (
         <div className="body bg-amber-200 h-full">
@@ -18,7 +19,8 @@ const Body = () => {
             <div className="flex flex-wrap justify-center">
             {
                 filteredResList.map((res) => 
-                <Link key = {res.info.id} to = {"restaurant/"+res.info.id}><ResCards  resData = {res}/></Link>)
+                <Link key = {res.info.id} to = {"restaurant/"+res.info.id}>{
+                    res.info.veg ? <VegCards resData = {res}/> : <ResCards resData = {res}/>}</Link>)
             }
             </div>
         </div>

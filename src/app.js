@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 const App = () => {
   const  [resList1, setResList1] = useState([]);
   const [filteredResList, setfilteredResList] = useState([]);
@@ -20,10 +23,12 @@ const App = () => {
         setfilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     return (
+        <Provider store={appStore}>
         <div className="app">
             <Header resList1={resList1} setResList1={setResList1} filteredResList={filteredResList} setfilteredResList={setfilteredResList}/>
             <Outlet context={{resList1, setResList1, filteredResList, setfilteredResList}}/>
         </div>
+        </Provider>
     )
 }
 const appRouter = createBrowserRouter([
@@ -47,6 +52,10 @@ const appRouter = createBrowserRouter([
             {
                 path : "/restaurant/:resId",
                 element : <RestaurantMenu/>
+            },
+            {
+                path : "/cart",
+                element : <Cart/>
             }
         ]
 

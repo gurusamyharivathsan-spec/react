@@ -2,8 +2,10 @@ import { useState } from "react";
 import {LOGO} from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 const Header = (props) => {
     const onlineStatus = useOnlineStatus();
+    const cart = useSelector((store) =>store?.cart?.items);
     const {resList1, setResList1} = props;
     const {filteredResList, setfilteredResList} = props
     const [btnName, setbtnName] = useState("Login");
@@ -26,6 +28,7 @@ const Header = (props) => {
                 <li className="px-2"><Link to ="/">Home</Link></li>
                 <li className="px-2"><Link to ="/about">About Us</Link></li>
                 <li className="px-2"><Link to ="/contact">Contact Us</Link></li>
+                <li className="px-2 font-bold"><Link to = "/cart">Cart - {cart?.length} items</Link></li>
                 <li className="px-2">Online Status :{onlineStatus? "✅" : "❌"} </li>
                 <button className="px-4 py-2 border border-amber-400 bg-amber-400 rounded-lg" onClick={()=> {
                     btnName === "Login" ? setbtnName("Logout") : setbtnName("Login"); 
